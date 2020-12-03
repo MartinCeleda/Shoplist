@@ -1,9 +1,12 @@
-import {ListGroupItem} from "reactstrap";
+import {ListGroupItem, Button, Row, Col} from "reactstrap";
 
-const ListItem = ({item, setName, ...rest}) => (
+const Item = ({index, item, Deletor, ...rest}) => (
     <ListGroupItem>
-        <p>{item}</p>
-    </ListGroupItem>
+        <Row>
+            <Col><p>{item}</p></Col>
+            <Col><Button outline color="danger" onClick = {e => Deletor(index)}>X</Button></Col>
+        </Row>  
+    </ListGroupItem>    
 );
 
-export default ListItem;
+export default Item;
